@@ -1160,11 +1160,7 @@ form.addEventListener('submit', (ev)=>{
   ev.preventDefault();
   if(!form.checkValidity()){ form.reportValidity(); return; }
   // TODO: 本番実装時はここでフォーム送信（fetch / フォームサービス連携）
-  document.getElementById('formWrap').classList.add('hide');
-  const thanks = document.getElementById('thanks');
-  thanks.classList.add('show');
-  thanks.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
-  document.getElementById('form').scrollIntoView({behavior:'smooth'});
+  window.location.href = 'thanks.html';
 });
 </script>
 </body>
