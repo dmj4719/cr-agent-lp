@@ -472,16 +472,11 @@ footer{background:var(--ink);color:#fff;padding:56px 0 40px}
         <span>30分無料オンライン面談</span>
       </div>
       <div class="bk-cal-body">
-        <!--
-          ▼ ここにTimeRexの埋め込みコードを貼り付けてください（下のplaceholderは削除）
-          <div id="timerex_calendar" data-url="https://timerex.net/s/xxxx/yyyy"></div>
-          <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
-        -->
-        <div class="timerex-placeholder">
-          <span class="en">TimeRex Booking Calendar</span>
-          ここに TimeRex の予約カレンダーを埋め込み<br>
-          （空き枠を選ぶだけで、その場で面談予約が完結します）
-        </div>
+        <!-- Begin TimeRex Widget -->
+        <div id="timerex_calendar" data-url="https://timerex.net/s/kazuma.okamoto_fd60/a0e79029"></div>
+        <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+        <script type="text/javascript">TimerexCalendar();</script>
+        <!-- End TimeRex Widget -->
       </div>
     </div>
     <p class="bk-mail rv rv-d3">※ 資料送付メールにも同じ予約リンクを記載しています。後からのご予約も可能です。</p>
