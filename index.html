@@ -107,37 +107,6 @@ body::before{
 
 /* FV専用CTA */
 .fv-cta{margin-top:36px}
-.fv-cta-btn{
-  display:inline-flex;align-items:center;gap:0;
-  transform:skewX(-8deg);
-  box-shadow:0 12px 36px rgba(0,0,0,.35);
-  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s;
-  text-decoration:none;
-}
-.fv-cta-btn:hover{transform:skewX(-8deg) translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.4)}
-.fv-cta-free{
-  display:flex;align-items:center;justify-content:center;
-  background:var(--ink);color:#fff;
-  font-family:var(--font-en);font-style:italic;font-weight:900;font-size:13px;letter-spacing:.18em;
-  padding:18px 20px;
-  transform:skewX(0);
-}
-.fv-cta-txt{
-  display:flex;align-items:center;
-  background:#fff;color:var(--ink);
-  font-weight:900;font-size:clamp(14px,1.8vw,17px);letter-spacing:.06em;
-  padding:18px 28px;
-  transform:skewX(0);
-}
-.fv-cta-arw{
-  display:flex;align-items:center;justify-content:center;
-  background:var(--red);color:#fff;
-  font-family:var(--font-en);font-weight:900;font-size:20px;
-  padding:18px 20px;
-  transform:skewX(0);
-  transition:padding .25s;
-}
-.fv-cta-btn:hover .fv-cta-arw{padding:18px 26px 18px 20px}
 
 /* リビール */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -787,11 +756,7 @@ footer{background:var(--ink);color:#fff;padding:60px 0 40px}
         <li><span>運用工数 2/3</span></li>
       </ul>
       <div class="fv-cta rv rv-d3">
-        <a class="fv-cta-btn" href="#form">
-          <span class="fv-cta-free">FREE</span>
-          <span class="fv-cta-txt">お問い合わせはこちら</span>
-          <span class="fv-cta-arw">→</span>
-        </a>
+        <a class="btn btn-white" href="#form"><span>無料でお問い合わせ</span><span class="arw">→</span></a>
       </div>
     </div>
 
