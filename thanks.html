@@ -212,6 +212,83 @@ header{
 .bn-card h3 small{font-size:.75em;font-weight:700;color:#666}
 .bn-card p{font-size:14px;color:#555;line-height:2}
 .bn-card p b{color:var(--red)}
+/* 冊子モック */
+.bn-book{
+  position:relative;width:140px;height:180px;margin:24px auto 0;
+  perspective:600px;
+}
+.bn-book .cover{
+  position:absolute;inset:0;border-radius:2px 6px 6px 2px;
+  transform:rotateY(-12deg);transform-origin:left center;
+  box-shadow:6px 6px 20px rgba(20,20,20,.18),1px 0 0 rgba(0,0,0,.1) inset;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:16px;text-align:center;overflow:hidden;
+}
+.bn-book .cover::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:8px;
+  background:linear-gradient(90deg,rgba(0,0,0,.12),transparent);
+}
+.bn-book .cover::after{
+  content:"";position:absolute;right:0;top:8%;bottom:8%;width:1px;
+  background:rgba(255,255,255,.3);
+}
+/* 背面ページ（厚み演出） */
+.bn-book .page{
+  position:absolute;top:3px;left:2px;right:-2px;bottom:3px;
+  background:#fff;border-radius:1px 4px 4px 1px;
+  transform:rotateY(-12deg);transform-origin:left center;
+  box-shadow:3px 3px 10px rgba(20,20,20,.1);
+}
+.bn-book .page2{
+  top:6px;left:3px;right:-4px;bottom:6px;z-index:-1;
+  box-shadow:2px 2px 6px rgba(20,20,20,.06);
+}
+/* 特典①: 診断レポート（紺表紙） */
+.bn-book.report .cover{
+  background:linear-gradient(135deg,var(--ink) 0%,#2a2a2a 100%);
+  color:#fff;
+}
+.bn-book.report .cover-logo{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--red);display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-style:italic;font-weight:900;font-size:11px;
+  margin-bottom:10px;
+}
+.bn-book.report .cover-title{
+  font-weight:900;font-size:10px;line-height:1.6;letter-spacing:.04em;
+}
+.bn-book.report .cover-sub{
+  font-size:7.5px;opacity:.7;margin-top:6px;letter-spacing:.06em;
+}
+.bn-book.report .cover-bar{
+  position:absolute;bottom:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--red),var(--orange));
+}
+/* 特典②: パターン集（赤表紙） */
+.bn-book.patterns .cover{
+  background:linear-gradient(135deg,var(--red) 0%,#f0410b 60%,var(--orange) 100%);
+  color:#fff;
+}
+.bn-book.patterns .cover-badge{
+  font-family:var(--font-en);font-style:italic;font-weight:900;font-size:7px;
+  letter-spacing:.16em;background:rgba(0,0,0,.25);padding:3px 10px;margin-bottom:8px;
+}
+.bn-book.patterns .cover-title{
+  font-weight:900;font-size:10.5px;line-height:1.6;letter-spacing:.02em;
+}
+.bn-book.patterns .cover-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:3px;
+  margin-top:10px;width:80%;
+}
+.bn-book.patterns .cover-grid i{
+  aspect-ratio:1/1;border-radius:1px;display:block;
+}
+.bn-book.patterns .cover-grid .g1{background:rgba(255,255,255,.85)}
+.bn-book.patterns .cover-grid .g2{background:rgba(255,255,255,.55)}
+.bn-book.patterns .cover-grid .g3{background:rgba(0,0,0,.2)}
+.bn-book.patterns .cover-sub{
+  font-size:7px;opacity:.8;margin-top:8px;letter-spacing:.08em;
+}
 .bn-note{text-align:center;margin-top:28px;font-size:13px;color:#888;letter-spacing:.03em}
 @media (max-width:860px){
   .bn-cards{grid-template-columns:1fr;gap:34px}
@@ -463,12 +540,36 @@ footer{background:var(--ink);color:#fff;padding:56px 0 40px}
         <span class="bn-tag"><span>特典①</span></span>
         <h3>御社の広告アカウント<br>無料診断レポート</h3>
         <p>面談時に、御社の広告アカウントのCR・CTR・CPMを簡易分析。<b>改善ポイントをまとめたレポート</b>をその場でお渡しします。</p>
+        <div class="bn-book report">
+          <div class="page page2"></div>
+          <div class="page"></div>
+          <div class="cover">
+            <span class="cover-logo">D</span>
+            <span class="cover-title">広告アカウント<br>無料診断レポート</span>
+            <span class="cover-sub">AD ACCOUNT ANALYSIS</span>
+            <span class="cover-bar"></span>
+          </div>
+        </div>
       </div>
       <div class="bn-card rv rv-d1">
         <span class="bn-num">02</span>
         <span class="bn-tag"><span>特典②</span></span>
         <h3>勝ちCRパターン集<br><small>（業界別・非公開資料）</small></h3>
         <p>BtoB広告で実際に成果が出た<b>勝ちCRのパターン</b>を業界別にまとめた非公開資料を、面談参加者限定でお渡しします。</p>
+        <div class="bn-book patterns">
+          <div class="page page2"></div>
+          <div class="page"></div>
+          <div class="cover">
+            <span class="cover-badge">CONFIDENTIAL</span>
+            <span class="cover-title">勝ちCR<br>パターン集</span>
+            <div class="cover-grid">
+              <i class="g1"></i><i class="g2"></i><i class="g1"></i>
+              <i class="g3"></i><i class="g1"></i><i class="g2"></i>
+              <i class="g2"></i><i class="g3"></i><i class="g1"></i>
+            </div>
+            <span class="cover-sub">WINNING CR PATTERNS</span>
+          </div>
+        </div>
       </div>
     </div>
     <p class="bn-note rv rv-d2">※ 特典は面談にご参加いただいた方全員にお渡しします。</p>
