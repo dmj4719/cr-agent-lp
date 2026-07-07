@@ -182,6 +182,42 @@ header{
 .h-cta .cta-note{font-size:12px;font-weight:500;opacity:.85;margin-top:14px;letter-spacing:.04em}
 
 /* =========================================================
+   BONUS（商談特典）
+========================================================= */
+.bonus{background:#fff;padding:100px 0 110px;position:relative;overflow:hidden}
+.bonus .giant-bg{
+  position:absolute;top:8px;left:-2vw;
+  font-family:var(--font-en);font-style:italic;font-weight:900;
+  font-size:clamp(70px,13vw,170px);letter-spacing:.02em;line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(217,33,13,.12);
+  white-space:nowrap;pointer-events:none;user-select:none;
+}
+.bn-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:52px}
+.bn-card{
+  background:var(--grey);padding:42px 32px 36px;position:relative;
+  border-top:5px solid var(--red);
+  box-shadow:0 14px 40px rgba(20,20,20,.07);
+}
+.bn-card .bn-num{
+  position:absolute;top:-20px;right:18px;
+  font-family:var(--font-en);font-style:italic;font-weight:900;font-size:44px;
+  color:transparent;-webkit-text-stroke:1.5px var(--red);line-height:1;
+}
+.bn-card .bn-tag{
+  display:inline-block;font-weight:900;font-size:12px;letter-spacing:.1em;
+  background:var(--red);color:#fff;padding:5px 16px;transform:skewX(-8deg);margin-bottom:16px;
+}
+.bn-card .bn-tag>span{display:inline-block;transform:skewX(8deg)}
+.bn-card h3{font-weight:900;font-size:clamp(17px,2vw,20px);line-height:1.6;margin-bottom:14px}
+.bn-card h3 small{font-size:.75em;font-weight:700;color:#666}
+.bn-card p{font-size:14px;color:#555;line-height:2}
+.bn-card p b{color:var(--red)}
+.bn-note{text-align:center;margin-top:28px;font-size:13px;color:#888;letter-spacing:.03em}
+@media (max-width:860px){
+  .bn-cards{grid-template-columns:1fr;gap:34px}
+}
+
+/* =========================================================
    BRIDGE（面談の価値）
 ========================================================= */
 .bridge{background:var(--grey);padding:100px 0 110px;position:relative;overflow:hidden}
@@ -410,6 +446,32 @@ footer{background:var(--ink);color:#fff;padding:56px 0 40px}
       <a class="btn btn-white" href="#booking"><span>30分の無料オンライン面談を予約する</span><span class="arw">↓</span></a>
       <p class="cta-note">※ 空き枠からご都合の良い日時を選ぶだけ。その場で予約が完了します。</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ BONUS（商談特典） ============ -->
+<section class="bonus">
+  <p class="giant-bg" aria-hidden="true">BONUS</p>
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <p class="sec-eyebrow" style="justify-content:center;color:var(--red)">Bonus</p>
+      <h2 class="sec-title"><span class="sk">面談ご参加で、<span class="hl-r">2大特典</span>を</span><br><span class="sk">無料プレゼント。</span></h2>
+    </div>
+    <div class="bn-cards">
+      <div class="bn-card rv">
+        <span class="bn-num">01</span>
+        <span class="bn-tag"><span>特典①</span></span>
+        <h3>御社の広告アカウント<br>無料診断レポート</h3>
+        <p>面談時に、御社の広告アカウントのCR・CTR・CPMを簡易分析。<b>改善ポイントをまとめたレポート</b>をその場でお渡しします。</p>
+      </div>
+      <div class="bn-card rv rv-d1">
+        <span class="bn-num">02</span>
+        <span class="bn-tag"><span>特典②</span></span>
+        <h3>勝ちCRパターン集<br><small>（業界別・非公開資料）</small></h3>
+        <p>BtoB広告で実際に成果が出た<b>勝ちCRのパターン</b>を業界別にまとめた非公開資料を、面談参加者限定でお渡しします。</p>
+      </div>
+    </div>
+    <p class="bn-note rv rv-d2">※ 特典は面談にご参加いただいた方全員にお渡しします。</p>
   </div>
 </section>
 
